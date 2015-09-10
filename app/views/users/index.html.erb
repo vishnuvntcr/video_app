@@ -1,0 +1,10 @@
+<% @users.each do |user|%>
+   <ul>
+   <%= user.name %>
+   <li><%= video_tag user.avatar.url, width: 150, height: 150, controls: true, autoplay: true %></li>
+   <li><%= image_tag user.avatar.url(:thumb) %></li>
+   </ul>
+    <%= link_to "delete", user_path(user), method: :delete %>
+
+<% end %>
+<%= link_to "new", new_user_path %>
